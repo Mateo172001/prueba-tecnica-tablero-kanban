@@ -1,0 +1,60 @@
+{
+  "users": [
+    { "id": 1, "name": "Ana Gómez" },
+    { "id": 2, "name": "Carlos Pérez" },
+    { "id": 3, "name": "Luisa Martínez" },
+    { "id": 4, "name": "Diego Torres" },
+    { "id": 5, "name": "Sofía Rivas" }
+  ],
+  "tasks": [
+    {
+      "id": 101,
+      "title": "Diseñar logo nuevo",
+      "description": "Crear un nuevo logo para la campaña de verano.",
+      "status": "pending",
+      "user": "Ana Gómez"
+    },
+    {
+      "id": 102,
+      "title": "Configurar servidor",
+      "description": "Instalar Node.js y configurar entorno de desarrollo.",
+      "status": "in-progress",
+      "user": "Carlos Pérez"
+    },
+    {
+      "id": 103,
+      "title": "Crear landing page",
+      "description": "Diseñar y maquetar la nueva página de destino.",
+      "status": "pending",
+      "user": "Luisa Martínez"
+    },
+    {
+      "id": 104,
+      "title": "Revisar textos legales",
+      "description": "Verificar términos y condiciones del sitio.",
+      "status": "completed",
+      "user": "Sofía Rivas"
+    },
+    {
+      "id": 105,
+      "title": "Test de usabilidad",
+      "description": "Coordinar pruebas con usuarios reales.",
+      "status": "in-progress",
+      "user": "Diego Torres"
+    },
+    {
+      "id": 106,
+      "title": "Campaña en redes",
+      "description": "Planificar contenidos y publicaciones para Instagram.",
+      "status": "pending",
+      "user": "Ana Gómez"
+    },
+    {
+      "id": 107,
+      "title": "Automatizar reportes",
+      "description": "Crear scripts para enviar reportes semanales por email.",
+      "status": "completed",
+      "user": "Carlos Pérez"
+    }
+  ]
+}
