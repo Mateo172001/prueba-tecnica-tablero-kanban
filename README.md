@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Aplicación de Gestión de Tareas - Kanban
 
-## Getting Started
+Esta es una aplicación web de gestión de tareas tipo Kanban, construida con **Next.js (App Router)**, **TailwindCSS**, **Context API**, **IndexedDB** para persistencia local, y **json-server** como backend simulado.
 
-First, run the development server:
+## ✨ Características
+
+- Crear y editar tareas con campos: título, descripción, estado y usuario asignado.
+- Vista tipo Kanban con columnas: **Pendiente**, **Progreso**, **Completado**.
+- Cambios de estado automáticos al editar.
+- Modal responsive para crear y editar tareas.
+- Persistencia en `IndexedDB` y sincronización con `json-server`.
+
+---
+
+## ⚙️ Requisitos
+
+- Node.js ≥ 18.x
+- npm ≥ 9.x o yarn ≥ 1.x
+
+---
+
+## 🚀 Instalación
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/Mateo172001/prueba-tecnica-tablero-kanban
+cd prueba-tecnica-tablero-kanban
+```
+
+Instala las dependencias:
+
+```bash
+npm install
+# o
+yarn install
+```
+
+---
+
+## 📦 Backend simulado con json-server
+
+Usamos `json-server` para simular un backend RESTful con datos persistentes.
+
+### 📁 Estructura esperada del archivo `db.json`:
+
+Ubica este archivo en la raíz del proyecto:
+
+```json
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Diseñar logo",
+      "description": "Crear propuesta para nuevo logo",
+      "status": "pending",
+      "user": "María"
+    },
+    {
+      "id": 2,
+      "title": "Reunión con el equipo",
+      "description": "Discutir próximos pasos del sprint",
+      "status": "in-progress",
+      "user": "Carlos"
+    },
+    {
+      "id": 3,
+      "title": "Documentar API",
+      "description": "Agregar descripción a todos los endpoints",
+      "status": "completed",
+      "user": "Ana"
+    }
+  ],
+  "users": [
+    { "id": 1, "name": "María" },
+    { "id": 2, "name": "Carlos" },
+    { "id": 3, "name": "Ana" }
+  ]
+}
+```
+
+### ▶️ Ejecutar json-server
+
+Instala json-server si no lo tienes:
+
+```bash
+npm install -g json-server
+```
+
+Inicia el servidor:
+
+```bash
+json-server --watch db.json --port 3001
+```
+
+Esto expondrá los endpoints en:
+
+- `http://localhost:3001/tasks`
+- `http://localhost:3001/users`
+
+---
+
+## 💻 Ejecutar la aplicación Next.js
+
+En otra terminal, inicia la app:
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto levantará el frontend en:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Asegúrate de que `json-server` esté corriendo en `localhost:3001` para que la app funcione correctamente.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Estructura del Proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+/app
+  /features
+    /tasks
+      /components    # Componentes específicos de tareas
+      /hooks         # Hooks personalizados
+      /models        # Modelos de dominio
+      /services      # Llamadas al backend (json-server)
+  /core
+    /utils           # Funciones auxiliares
+    /storage         # IndexedDB y persistencia
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📌 Notas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Usa `Context API` para manejar el estado global.
+- Usa `IndexedDB` para persistencia local.
+- json-server actúa como una API REST mock.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧹 Scripts útiles
+
+```bash
+npm run dev        # Ejecutar la app en modo desarrollo
+npm run build      # Construir la app para producción
+npm run lint       # Lint del código
+```
+
+---
+
+
+Desarrollado por Mateo Avila 💻  
+
+
+---
